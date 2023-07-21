@@ -3,7 +3,7 @@
 def start():
     contactList = {}
     contactList = createTestContacts(contactList)
-    inputContactList(contactList)
+    createContact(contactList)
     showContactList(contactList)
     endOfContactlist()
 
@@ -13,13 +13,20 @@ def start():
 
 def createTestContacts(contactList):
     print("Här ligger test contacter")
-    contactList = (("Albin", 23, "0707"), ("Jonas", 58, "0705"))
+    # contactList = (("Albin", 23, "0707"), ("Jonas", 58, "0705"))
     print(contactList)
     return contactList
     
-def inputContactList(contactList):
+def createContact(contactList):
     print("Input: Här matar vi in ContaltList")
     InputOneContact(contactList)
+    print("Name:")
+    contactName = input()
+    print("Age:")
+    contactAge = input()
+    # print("Number:")
+    # contactNumber = input()
+    contactList.update({contactName:contactAge})
 
 def InputOneContact(contactList):
     print("-- Här matar vi in en enda kontakt")
