@@ -1,9 +1,9 @@
 
 # main program
 def start():
-    contactList = {}
+    contactList = []
     contactList = createTestContacts(contactList)
-    createContact(contactList)
+    createOneContact(contactList)
     showContactList(contactList)
     endOfContactlist()
 
@@ -13,24 +13,19 @@ def start():
 
 def createTestContacts(contactList):
     print("Här ligger test contacter")
-    # contactList = (("Albin", 23, "0707"), ("Jonas", 58, "0705"))
+    contactList = [["Albin", 23, "0707"], ["Jonas", 58, "0705"]]
     print(contactList)
     return contactList
     
-def createContact(contactList):
-    print("Input: Här matar vi in ContaltList")
-    InputOneContact(contactList)
-    print("Name:")
-    contactName = input()
-    print("Age:")
-    contactAge = input()
-    # print("Number:")
-    # contactNumber = input()
-    contactList.update({contactName:contactAge})
+def createOneContact(contactList):
+    print("Input: Här matar vi in en contact och lägger in sist i contact list")
 
-def InputOneContact(contactList):
-    print("-- Här matar vi in en enda kontakt")
-
+    contactName = input("Name: ")
+    contactAge = input("Age: ")
+    contactNumber = input("Number: ")
+    #Updaterar listan
+    contactList.append([contactName,contactAge,contactNumber])
+    return contactList
 
 
 #  GoGoGo Albin:  Skriv ut i fint, med rubriker
