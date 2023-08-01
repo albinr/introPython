@@ -2,10 +2,18 @@
 # main program
 def start():
     contactList = []
+    while True:
+        choose = input().lower()
+        if choose == "new":
+            createOneContact(contactList)
+        elif choose == "contacts":
+            showContactList(contactList)
     contactList = createTestContacts(contactList)
     createOneContact(contactList)
     showContactList(contactList)
     endOfContactlist()
+    
+
 
 
 
@@ -28,11 +36,15 @@ def createOneContact(contactList):
     return contactList
 
 
-#  GoGoGo Albin:  Skriv ut i fint, med rubriker
+
 
 def showContactList(contactList):
     print("Nu visar vi kontaktlistan")
-    print(contactList)
+    # print(contactList)
+
+    for contact in contactList:
+        print(contact)
+
     ShowOneContact(contactList)
 
 
